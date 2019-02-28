@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <h1>Phone validation</h1>
+    <style>
+    html{
+      background-color:lightgreen;
+    }
+      .divko,h1{
+        text-align: center;
+      }
+      #emoji{
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="divko">
+      <input id="phoneNumber" type="text">
+      <input type="button" value="Check" onclick="validation()">
+      <img id="emoji" src="sadface.png" style="display:none">
+
+    </div>
+    <script>
+    validation = () => {
+      let regex=/^(0|00421|\+421)(9[0-9]{8})$/;
+      let number=document.getElementById('phoneNumber').value;
+      let phoneResult=regex.test(number);
+
+
+      if(phoneResult===true){
+        document.getElementById('emoji').style.display="block";
+        document.getElementById('emoji').src="happyface.png"
+      }else{
+        document.getElementById('emoji').style.display="block";
+        document.getElementById('emoji').src="sadface.png"
+      }
+
+
+    }
+
+    </script>
+
+  </body>
+</html>
